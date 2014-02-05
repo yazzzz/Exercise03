@@ -10,9 +10,12 @@ import arithmetic
 
 while True:
     user_input = raw_input(">> ")
-    #print user_input
     user_input_list = []
     user_input_list = user_input.split(" ")
-    #print user_input_list
+    if user_input_list[1].isdigit() and user_input_list[2].isdigit():
+        if user_input_list[0] == "+":
+            print arithmetic.add(int(user_input_list[1]), int(user_input_list[2]))
+    else:   
+        print "That's not a valid integer!"
 
 
