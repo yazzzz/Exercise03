@@ -2,9 +2,12 @@ import arithmetic
 
 while True:
     user_input = raw_input(">> ")
-    user_input_list = []
-    user_input_list = user_input.split(" ")
+    
+    if user_input.lower() == "q":
+        break
 
+    user_input_list = []
+    user_input_list = user_input.lstrip().split(" ")
 
     # first check for proper number of arguments.
     if len(user_input_list) > 3 or len(user_input_list) < 2:
@@ -34,10 +37,10 @@ while True:
                 print arithmetic.subtract(int(arg1), int(arg2))
             if arg0 == "*":
                 print arithmetic.multiply(int(arg1), int(arg2))
-            if arg0 == "/":
-                print arithmetic.divide(int(arg1), int(arg2))
             if arg0 == "pow":
                 print arithmetic.power(int(arg1), int(arg2))
+            if arg0 == "/":
+                print arithmetic.divide(int(arg1), int(arg2))
             if arg0 == "mod":
                 print arithmetic.mod(int(arg1), int(arg2))
 
